@@ -1,4 +1,4 @@
-package com.phongvv.efood
+package com.sun.efood
 
 import org.junit.Test
 
