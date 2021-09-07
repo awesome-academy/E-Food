@@ -1,4 +1,4 @@
-package com.phongvv.efood
+package com.sun.efood
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
