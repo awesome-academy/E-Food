@@ -6,8 +6,9 @@ import com.sun.efood.data.source.MealDataSource
 import com.sun.efood.data.source.utils.OnDataCallback
 
 class MealRepository private constructor(
-    private val remote: MealDataSource.Remote
-) : MealDataSource.Remote {
+    private val remote: MealDataSource.Remote,
+    private val local: MealDataSource.Local
+) : MealDataSource.Remote, MealDataSource.Local {
 
     override fun getRandomMeal(callback: OnDataCallback<Meal>) {
         remote.getRandomMeal(callback)
@@ -25,10 +26,26 @@ class MealRepository private constructor(
         remote.getMealDetailByMeal(nameMeal, callback)
     }
 
+    override fun insertMeal(meal: Meal, callback: OnDataCallback<Long>) {
+        local.insertMeal(meal, callback)
+    }
+
+    override fun deleteMeal(mealId: String, callback: OnDataCallback<Boolean>) {
+        local.deleteMeal(mealId, callback)
+    }
+
+    override fun getAllMeals(callback: OnDataCallback<List<Meal>>) {
+        local.getAllMeals(callback)
+    }
+
+    override fun isFavorite(mealId: String, callback: OnDataCallback<Boolean>) {
+        local.isFavorite(mealId, callback)
+    }
+
     companion object {
         private var instance: MealRepository? = null
 
-        fun getInstance(remote: MealDataSource.Remote) =
-            instance ?: MealRepository(remote).also { instance = it }
+        fun getInstance(remote: MealDataSource.Remote, local: MealDataSource.Local) =
+            instance ?: MealRepository(remote, local).also { instance = it }
     }
 }
