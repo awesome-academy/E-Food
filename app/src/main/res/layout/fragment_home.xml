@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@color/color_concrete"
+    android:fillViewport="true"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,12 +26,12 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_40"
             android:layout_marginHorizontal="@dimen/dp_20"
-            app:iconifiedByDefault="false"
-            app:queryHint="@string/text_search_food"
             android:background="@drawable/background_radius"
+            app:iconifiedByDefault="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/text_search_food" />
 
         <TextView
             android:id="@+id/textRecommended"
@@ -53,7 +52,8 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textRecommended" />
+            app:layout_constraintTop_toBottomOf="@id/textRecommended"
+            tools:listitem="@layout/item_meal" />
 
         <TextView
             android:id="@+id/textCategory"
@@ -74,7 +74,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textCategory"
-            app:spanCount="2" />
+            app:spanCount="2"
+            tools:listitem="@layout/item_category" />
 
         <ProgressBar
             android:id="@+id/progressMealLoading"
