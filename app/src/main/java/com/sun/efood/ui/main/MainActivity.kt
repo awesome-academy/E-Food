@@ -9,7 +9,6 @@ import com.sun.efood.databinding.ActivityMainBinding
 import com.sun.efood.ui.home.HomeFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-    private val ELEVATION_ACTION_BAR = 0F
 
     private val onBottomNavigation = NavigationBarView.OnItemSelectedListener {
         when (it.itemId) {
@@ -21,11 +20,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreatedView() {
-        supportActionBar?.apply {
-            setDisplayShowTitleEnabled(false)
-            elevation = ELEVATION_ACTION_BAR
-        }
-
         binding.bottomNavigationView.apply {
             setOnItemSelectedListener(onBottomNavigation)
             selectedItemId = R.id.menuHome

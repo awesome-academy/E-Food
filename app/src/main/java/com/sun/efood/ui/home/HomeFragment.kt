@@ -2,23 +2,15 @@ package com.sun.efood.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import com.sun.efood.R
 import com.sun.efood.ui.home.adapter.MealCategoryAdapter
 import com.sun.efood.base.BaseFragment
 import com.sun.efood.data.model.Meal
 import com.sun.efood.data.model.MealCategory
-import com.sun.efood.data.repository.MealCategoryRepository
-import com.sun.efood.data.repository.MealRepository
 import com.sun.efood.data.repository.utils.RepositoryUtils
-import com.sun.efood.data.source.local.MealLocalDataSource
-import com.sun.efood.data.source.local.dao.MealDaoImpl
-import com.sun.efood.data.source.local.db.AppDatabase
-import com.sun.efood.data.source.remote.MealCategoryRemoteDataSource
-import com.sun.efood.data.source.remote.MealRemoteDataSource
 import com.sun.efood.databinding.FragmentHomeBinding
 import com.sun.efood.ui.detail.MealDetailFragment
-import com.sun.efood.ui.home.adapter.RandomMealAdapter
+import com.sun.efood.ui.home.adapter.MealAdapter
 import com.sun.efood.ui.listmeal.ListMealFragment
 import com.sun.efood.ui.search.SearchFragment
 import com.sun.efood.utils.addFragment
@@ -29,7 +21,7 @@ import com.sun.efood.utils.showToast
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeContact.View {
 
     private var presenter: HomePresenter? = null
-    private val randomMealAdapter = RandomMealAdapter(::onRandomMealClick)
+    private val randomMealAdapter = MealAdapter(::onRandomMealClick)
     private val mealCategoryAdapter = MealCategoryAdapter(::onMealCategoryClick)
     private val randomMeals = mutableListOf<Meal>()
 

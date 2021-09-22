@@ -9,9 +9,9 @@ import com.sun.efood.data.model.Meal
 import com.sun.efood.databinding.ItemMealBinding
 import com.sun.efood.utils.loadImage
 
-class RandomMealAdapter(
+class MealAdapter(
     private val onItemClick: (Meal) -> Unit
-) : BaseAdapter<Meal, RandomMealAdapter.ViewHolder>() {
+) : BaseAdapter<Meal, MealAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
