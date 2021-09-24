@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/color_sea_buckthorn"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@null"
+        android:paddingHorizontal="@dimen/dp_16"
+        android:src="@drawable/ic_arrow_back" />
+
+    <TextView
+        android:id="@+id/textTitleToolBar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_18" />
+</LinearLayout>
