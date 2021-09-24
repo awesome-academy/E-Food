@@ -8,7 +8,7 @@
     tools:context=".ui.listmeal.ListMealFragment">
 
     <include
-        android:id="@+id/toolBar"
+        android:id="@+id/layoutToolBar"
         layout="@layout/layout_tool_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_constraintTop_toBottomOf="@id/layoutToolBar"
         tools:listitem="@layout/item_meal" />
 
     <ProgressBar
@@ -33,5 +33,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolBar" />
+        app:layout_constraintTop_toTopOf="@id/layoutToolBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
