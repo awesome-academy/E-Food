@@ -9,7 +9,7 @@ import com.sun.efood.data.model.Meal
 import com.sun.efood.data.model.MealCategory
 import com.sun.efood.data.repository.utils.RepositoryUtils
 import com.sun.efood.databinding.FragmentHomeBinding
-import com.sun.efood.ui.detail.MealDetailFragment
+import com.sun.efood.ui.detail.MealDetailActivity
 import com.sun.efood.ui.home.adapter.MealAdapter
 import com.sun.efood.ui.listmeal.ListMealFragment
 import com.sun.efood.ui.search.SearchFragment
@@ -75,10 +75,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeContact.View {
     }
 
     private fun onRandomMealClick(meal: Meal) {
-        parentFragmentManager.addFragment(
-            R.id.fragmentContainer,
-            MealDetailFragment.getInstance(meal)
-        )
+        startActivity(MealDetailActivity.getInstance(context, meal))
     }
 
     private fun onMealCategoryClick(mealCategory: MealCategory) {

@@ -14,7 +14,8 @@
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@null"
         android:paddingHorizontal="@dimen/dp_16"
-        android:src="@drawable/ic_arrow_back" />
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@android:color/white" />
 
     <TextView
         android:id="@+id/textTitleToolBar"
