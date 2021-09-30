@@ -3,15 +3,17 @@ package com.sun.efood.ui.listmeal
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import com.sun.efood.R
 import com.sun.efood.base.BaseFragment
 import com.sun.efood.data.model.Meal
 import com.sun.efood.data.model.MealCategory
 import com.sun.efood.data.repository.utils.RepositoryUtils
 import com.sun.efood.databinding.FragmentListMealBinding
-import com.sun.efood.ui.detail.MealDetailFragment
+import com.sun.efood.ui.detail.MealDetailActivity
 import com.sun.efood.ui.home.adapter.MealAdapter
-import com.sun.efood.utils.*
+import com.sun.efood.utils.gone
+import com.sun.efood.utils.removeFragment
+import com.sun.efood.utils.show
+import com.sun.efood.utils.showToast
 
 class ListMealFragment : BaseFragment<FragmentListMealBinding>(), ListMealContact.View {
 
@@ -57,10 +59,7 @@ class ListMealFragment : BaseFragment<FragmentListMealBinding>(), ListMealContac
     }
 
     private fun onMealClick(meal: Meal) {
-        parentFragmentManager.addFragment(
-            R.id.fragmentContainer,
-            MealDetailFragment.getInstance(meal)
-        )
+        startActivity(MealDetailActivity.getInstance(context, meal))
     }
 
     private fun getTransferredData() {

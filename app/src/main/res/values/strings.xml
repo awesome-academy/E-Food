@@ -8,4 +8,6 @@
     <string name="text_recommended_for_you">Recommended for you</string>
     <string name="text_category">Category</string>
     <string name="text_search_food">Search food</string>
+    <string name="text_description">Description</string>
+    <string name="text_ingredients">Ingredients</string>
 </resources>
