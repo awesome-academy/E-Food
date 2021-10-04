@@ -5,7 +5,7 @@ import com.sun.efood.utils.MealCategoryModelConst.ID_CATEGORY
 import com.sun.efood.utils.MealCategoryModelConst.STR_CATEGORY
 import com.sun.efood.utils.MealCategoryModelConst.STR_CATEGORY_DESCRIPTION
 import com.sun.efood.utils.MealCategoryModelConst.STR_CATEGORY_THUMB
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.json.JSONObject
 
 @Parcelize

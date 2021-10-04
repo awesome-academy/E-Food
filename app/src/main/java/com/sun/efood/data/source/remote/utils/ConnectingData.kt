@@ -12,7 +12,7 @@ fun connectData(urlLink: String): String {
     val stringBuilder = StringBuilder()
     var urlOpenConnection: HttpURLConnection? = null
     var inputStreamReader: InputStreamReader? = null
-    var bufferedReader: BufferedReader? = null
+    var bufferedReader: BufferedReader?
     try {
         urlOpenConnection = url.openConnection() as HttpURLConnection
         inputStreamReader = InputStreamReader(urlOpenConnection.inputStream)

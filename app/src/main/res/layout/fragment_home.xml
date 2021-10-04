@@ -16,6 +16,7 @@
             android:id="@+id/imageLinearGradient"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp_200"
+            android:contentDescription="@null"
             android:src="@drawable/background_bottom_radius"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
