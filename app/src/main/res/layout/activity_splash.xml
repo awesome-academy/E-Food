@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideCenterHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_brand" />
+        app:srcCompat="@drawable/ic_brand"
+        android:contentDescription="@null"/>
 
     <TextView
         android:layout_width="0dp"

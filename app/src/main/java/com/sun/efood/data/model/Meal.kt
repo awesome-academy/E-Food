@@ -6,7 +6,7 @@ import android.os.Parcelable
 import com.sun.efood.utils.MealModelConst.ID_MEAL
 import com.sun.efood.utils.MealModelConst.STR_MEAL
 import com.sun.efood.utils.MealModelConst.STR_MEAL_THUMB
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.json.JSONObject
 
 @Parcelize
