@@ -2,7 +2,6 @@ package com.sun.efood.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.sun.efood.R
 import com.sun.efood.base.BaseAdapter
 import com.sun.efood.base.BaseViewHolder
 import com.sun.efood.data.model.Meal
@@ -30,9 +29,6 @@ class MealAdapter(
                 itemData.run {
                     textTitleMeal.text = name
                     imageMeal.loadImage(itemData.image)
-                    imageFavorite.setOnClickListener {
-                        imageFavorite.setImageResource(R.drawable.ic_favorite)
-                    }
                 }
             }
         }

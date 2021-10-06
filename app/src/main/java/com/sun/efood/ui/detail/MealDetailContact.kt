@@ -6,11 +6,15 @@ import com.sun.efood.data.model.MealDetail
 
 interface MealDetailContact {
     interface View {
-        fun showMessage(messageRes: Any)
+        fun showMessage(messageRes: Int)
         fun showMealDetail(mealDetails: List<MealDetail>)
+        fun showMealFavorite(isFavorite: Boolean)
     }
 
     interface Presenter : BasePresenter {
         fun getMealDetailByMeal(meal: Meal)
+        fun getMealFavorite(meal: Meal)
+        fun insertMealFavorite(meal: Meal)
+        fun deleteMealFavorite(mealId: String)
     }
 }

@@ -10,4 +10,6 @@
     <string name="text_search_food">Search food</string>
     <string name="text_description">Description</string>
     <string name="text_ingredients">Ingredients</string>
+    <string name="text_add_to_favorite">Added to favorite</string>
+    <string name="text_meal_deleted_from_favorite">Meal deleted from favorite</string>
 </resources>

@@ -12,6 +12,8 @@ import com.sun.efood.data.model.MealDetail
 import com.sun.efood.data.repository.utils.RepositoryUtils
 import com.sun.efood.databinding.ActivityMealDetailBinding
 import com.sun.efood.utils.Constants
+import com.sun.efood.utils.gone
+import com.sun.efood.utils.show
 import com.sun.efood.utils.showToast
 
 class MealDetailActivity : YouTubeBaseActivity(), MealDetailContact.View {
@@ -24,8 +26,8 @@ class MealDetailActivity : YouTubeBaseActivity(), MealDetailContact.View {
         super.onCreate(savedInstanceState)
         binding = ActivityMealDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initComponents()
         initData()
+        initComponents()
         initEvent()
     }
 
@@ -39,10 +41,21 @@ class MealDetailActivity : YouTubeBaseActivity(), MealDetailContact.View {
         }
     }
 
-    override fun showMessage(messageRes: Any) {
-        showToast(messageRes.toString())
+    override fun showMealFavorite(isFavorite: Boolean) {
+        with(binding) {
+            if (isFavorite) {
+                imageFavorite.show()
+                imageUnFavorite.gone()
+            } else {
+                imageFavorite.gone()
+                imageUnFavorite.show()
+            }
+        }
     }
 
+    override fun showMessage(messageRes: Int) {
+        showToast(resources.getString(messageRes))
+    }
     private fun initComponents() {
         binding.toolBar.textTitleToolBar.text = meal?.name
     }
@@ -56,14 +69,26 @@ class MealDetailActivity : YouTubeBaseActivity(), MealDetailContact.View {
         meal?.let { meal ->
             presenter?.apply {
                 getMealDetailByMeal(meal)
+                getMealFavorite(meal)
             }
         }
     }
 
-    private fun initEvent() {
-        binding.toolBar.buttonBack.setOnClickListener {
+    private fun initEvent() = with(binding) {
+        toolBar.buttonBack.setOnClickListener {
             onBackPressed()
             finish()
+
+        }
+        imageFavorite.setOnClickListener {
+            imageUnFavorite.show()
+            it.gone()
+            meal?.let { meal -> presenter?.deleteMealFavorite(meal.id) }
+        }
+        imageUnFavorite.setOnClickListener {
+            imageFavorite.show()
+            it.gone()
+            meal?.let { meal -> presenter?.insertMealFavorite(meal) }
         }
     }
 

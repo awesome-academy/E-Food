@@ -6,6 +6,7 @@ import com.google.android.material.navigation.NavigationBarView
 import com.sun.efood.R
 import com.sun.efood.base.BaseActivity
 import com.sun.efood.databinding.ActivityMainBinding
+import com.sun.efood.ui.favorite.FavoriteFragment
 import com.sun.efood.ui.home.HomeFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -13,6 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val onBottomNavigation = NavigationBarView.OnItemSelectedListener {
         when (it.itemId) {
             R.id.menuHome -> openFragment(HomeFragment())
+            R.id.menuFavorite -> openFragment(FavoriteFragment())
         }
         true
     }
